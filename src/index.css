@@ -2,39 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* GlobeTrotter Travel Design System - Ocean blues, sunset oranges, earth tones */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base colors - soft cream background */
+    --background: 40 15% 98%;
+    --foreground: 215 25% 15%;
 
+    /* Card colors - clean white with subtle warmth */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 15%;
 
+    /* Popover colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Travel-inspired primary - deep ocean blue */
+    --primary: 210 85% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 85% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - warm sand */
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 215 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - light ocean mist */
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - sunset orange */
+    --accent: 25 90% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - forest green */
+    --success: 145 60% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 85% 35%;
+
+    /* Travel-specific gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210 85% 35%), hsl(195 85% 45%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 90% 60%), hsl(10 85% 55%));
+    --gradient-earth: linear-gradient(135deg, hsl(35 40% 70%), hsl(25 30% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 85% 35%) 0%, hsl(195 85% 45%) 50%, hsl(25 90% 60%) 100%);
+
+    /* Shadows with travel theme */
+    --shadow-travel: 0 10px 30px -10px hsl(210 85% 35% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(210 85% 35% / 0.1);
+    --shadow-glow: 0 0 40px hsl(210 85% 55% / 0.3);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --radius: 0.5rem;
 
@@ -56,33 +83,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - deep travel night theme */
+    --background: 215 25% 8%;
+    --foreground: 40 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 25% 10%;
+    --card-foreground: 40 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 215 25% 10%;
+    --popover-foreground: 40 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 85% 55%;
+    --primary-foreground: 215 25% 8%;
+    --primary-glow: 210 85% 65%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 40 15% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 215 20% 15%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 25 90% 65%;
+    --accent-foreground: 215 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 145 60% 50%;
+    --success-foreground: 215 25% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 215 25% 8%;
+
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 210 85% 55%;
+
+    /* Dark mode gradients */
+    --gradient-ocean: linear-gradient(135deg, hsl(210 85% 25%), hsl(195 85% 35%));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 90% 50%), hsl(10 85% 45%));
+    --gradient-earth: linear-gradient(135deg, hsl(35 40% 30%), hsl(25 30% 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 85% 25%) 0%, hsl(195 85% 35%) 50%, hsl(25 90% 50%) 100%);
+
+    --shadow-travel: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(210 85% 55% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +142,74 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom travel utilities */
+  .travel-gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .travel-gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+  
+  .travel-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .travel-shadow {
+    box-shadow: var(--shadow-travel);
+  }
+  
+  .travel-card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .travel-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Smooth animations for travel elements */
+  .travel-transition {
+    transition: var(--transition-smooth);
+  }
+  
+  .travel-spring {
+    transition: var(--transition-spring);
+  }
+
+  /* Auto-sliding banner styles */
+  .banner-slide {
+    animation: bannerSlide 20s ease-in-out infinite;
+  }
+
+  @keyframes bannerSlide {
+    0%, 20% { opacity: 1; transform: scale(1); }
+    25%, 45% { opacity: 0; transform: scale(1.05); }
+    50%, 70% { opacity: 0; transform: scale(1); }
+    75%, 95% { opacity: 1; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Parallax effects for travel imagery */
+  .parallax-slow {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+@layer components {
+  /* Travel-specific component styles */
+  .trip-card {
+    @apply bg-card rounded-xl travel-card-shadow border border-border/50 overflow-hidden travel-transition hover:travel-shadow hover:-translate-y-1;
+  }
+  
+  .destination-banner {
+    @apply relative overflow-hidden rounded-2xl travel-card-shadow;
+  }
+  
+  .search-section {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-2xl travel-shadow;
   }
 }
